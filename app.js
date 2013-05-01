@@ -20,25 +20,29 @@
   };
 
   var makeBoat = function(){
-    var $boat = $('<div class="party ' + getSpeedClass() + '"><div class="boat"></div></div>');
+    var $party = $('<div class="party ' + getSpeedClass() + '"/>'),
+        onABoat = Math.random() > 0.10;
 
     var top = Math.floor(Math.random() * 99) + 1;
-    $boat.css({
+    $party.css({
       top: top + '%',
       zIndex: top
     }).mirrorMaybe();
+    $party.append(getPassenger());
 
-    $boat.prepend(getPassenger());
-    $boat.prepend(getPassenger());
+    if (onABoat) {
+      $party.append(getPassenger());
+      $party.append($('<div class="boat"/>'));
+    }
 
-    $boat.appendTo($lake);
+    $party.appendTo($lake);
 
     setTimeout(function(){
-      $boat.addClass('launched');
+      $party.addClass('launched');
     }, 50);
 
     setTimeout(function(){
-      $boat.remove();
+      $party.remove();
     }, 60 * 1000);
 
     // make next boat
