@@ -23,6 +23,8 @@ h1
   +transition-timing-function(linear)
   left: -10%
   position: absolute
+  height: 100px
+  width: 87px
 
   &.launched
     left: 110%
@@ -34,40 +36,53 @@ h1
 
 .boat
   background: url(images/boat.png) no-repeat
+  bottom: 0
   height: 46px
+  left: 0
+  position: absolute
   width: 87px
 
 .passenger
   background-repeat: no-repeat
   position: absolute
   z-index: -1
+  &:first-child
+    right: 0
+  &:nth-child(2)
+    left: 0
 
 .lovers
   background: url(images/lovers.png)
   height: 51px
-  top: -33px
+  top: 22px
   width: 72px
 
 .murderer
   background: url(images/murderer.png)
   height: 96px
-  top: -74px
+  top: 26px
   width: 78px
 
 .penguin
   background: url(images/penguin.png)
   height: 40px
-  top: -25px
+  top: 29px
   width: 50px
 
 .robot
   background-image: url(images/robot.png)
   height: 63px
-  top: -50px
+  top: 8px
   width: 50px
 
 .voyeur
   background-image: url(images/voyeur.png)
   height: 59px
-  top: -40px
+  top: 12px
   width: 75px
+
+
+.debug .party
+  outline: 2px dashed lime
+  > *
+    outline: 2px dashed pink
