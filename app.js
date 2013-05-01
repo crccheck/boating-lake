@@ -14,8 +14,13 @@
     return $('<div class="passenger ' + passenger + '"/>').mirrorMaybe();
   };
 
+  var getSpeedClass = function(){
+    var speeds = ['slow', 'medium', 'medium', 'fast'];
+    return speeds[Math.floor(Math.random() * speeds.length)];
+  };
+
   var makeBoat = function(){
-    var $boat = $('<div class="party"><div class="boat"></div></div>');
+    var $boat = $('<div class="party ' + getSpeedClass() + '"><div class="boat"></div></div>');
 
     var top = Math.floor(Math.random() * 99) + 1;
     $boat.css({

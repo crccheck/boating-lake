@@ -19,7 +19,6 @@ h1
 
 .party
   +transition-property(left)
-  +transition-duration(10s)
   +transition-timing-function(linear)
   left: -10%
   position: absolute
@@ -33,6 +32,15 @@ h1
     left: 110%
     &.launched
       left: -10%
+
+.fast
+  +transition-duration(30s)
+
+.medium
+  +transition-duration(45s)
+
+.slow
+  +transition-duration(60s)
 
 .boat
   background: url(images/boat.png) no-repeat
