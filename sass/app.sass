@@ -6,18 +6,20 @@ $water: #C8E0F5
 $text: #004f6f
 
 body, html
+  margin: 0
   overflow: hidden
 
 body
   background: $water
   color: $text
 
-h1 > a
-  +hide-text
+h1
   position: absolute
-  background: url(images/title.png) no-repeat center center transparent
-  min-height: 63px
+  text-align: center
   width: 100%
+
+img
+  max-width: 100%
 
 .mirror
   +scaleX(-1)
