@@ -15,7 +15,7 @@ server:
 	python -m SimpleHTTPServer
 
 csswatch:
-	sass --compass --watch sass/app.sass:app.css
+	sass --compass --watch --style compressed sass/app.sass:app.css
 
 # npm install coffee-script
 jswatch:
