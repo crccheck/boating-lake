@@ -23,15 +23,15 @@ h1 > a
   +scaleX(-1)
 
 .party
-  +transition-property(left)
+  +transition-property(transform)
   +transition-timing-function(linear)
-  left: -10%
+  +transform(translateX(-10%))
   position: absolute
   height: 100px
   width: 77px
 
   &.launched
-    left: 110%
+    +transform(translateX(110%))
 
   &.mirror
     left: 110%
