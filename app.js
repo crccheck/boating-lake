@@ -1,6 +1,12 @@
 (function($){
   "use strict";
 
+  var getPassenger = function(){
+    var passengers = ['lovers', 'murderer', 'penguin', 'robot', 'voyeur'],
+        passenger = passengers[Math.floor(Math.random() * passengers.length)];
+    return $('<div class="passenger ' + passenger + '"/>');
+  };
+
   var makeBoat = function(){
     var $boat = $('<div class="boat"/>');
 
@@ -14,6 +20,8 @@
       $boat.addClass('mirror');
     }
 
+    $boat.append(getPassenger());
+
     $boat.appendTo($lake);
 
     setTimeout(function(){
@@ -22,7 +30,7 @@
 
     setTimeout(function(){
       $boat.remove();
-    }, 10 * 1000);
+    }, 30 * 1000);
   };
 
   var $lake = $('#lake');
