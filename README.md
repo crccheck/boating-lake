@@ -8,6 +8,8 @@ A [demo] can be found at: http://crccheck.github.io/boating-lake/
 
 Source: [_Boating Lake_][source] by Tom Gauld.
 
+![Boating Lake](http://crccheck.github.io/boating-lake/images/original-comic.jpg)
+
 [book]: http://www.amazon.co.uk/dp/1770461043
 [source]: http://www.flickr.com/photos/tomgauld/4695780606/in/photostream/
 [demo]: http://crccheck.github.io/boating-lake/
