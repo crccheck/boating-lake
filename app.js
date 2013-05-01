@@ -91,6 +91,16 @@
 
   makeBoat();
 
+  var $key = $('#key'),
+      hideKey = function(speed){
+        speed = speed || 5000;
+        $key.fadeOut(speed, function(){
+          $key.remove();
+        });
+      };
+  $key.click(function(){ hideKey(200); });
+  setTimeout(hideKey, 20000);
+
   // easter egg interactions
   $lake
     .on('click', '.boat', function(){
