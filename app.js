@@ -95,6 +95,12 @@
   $lake
     .on('click', '.boat', function(){
       $(this).parent().toggleClass('mirror');
+    })
+    .on('click', '.ripples', function(){
+      $(this).prev()
+        .css('background-repeat', 'no-repeat')
+        .animate({'background-position-y': '20px'})
+        .animate({'background-position-y': '0'});
     });
 
 })(window.jQuery);
