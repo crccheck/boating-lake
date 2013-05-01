@@ -39,7 +39,7 @@
 
     setTimeout(function(){
       $boat.remove();
-    }, 30 * 1000);
+    }, 60 * 1000);
 
     // make next boat
     setTimeout(makeBoat, Math.random() * 3000);
