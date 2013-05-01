@@ -24,6 +24,7 @@
     }).mirrorMaybe();
 
     $boat.prepend(getPassenger());
+    $boat.prepend(getPassenger());
 
     $boat.appendTo($lake);
 
