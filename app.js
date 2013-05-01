@@ -9,10 +9,15 @@
   };
 
   var getPassenger = function(){
-    var passengers = ['', 'lovers', 'murderer', 'penguin', 'robot', 'voyeur'],
-        passenger = passengers[Math.floor(Math.random() * passengers.length)];
-    return $('<div class="passenger ' + passenger + '"/>').mirrorMaybe();
-  };
+        var passengers = ['', 'lovers', 'murderer', 'penguin', 'robot', 'voyeur'],
+            passenger = passengers[Math.floor(Math.random() * passengers.length)];
+        return $('<div class="passenger ' + passenger + '"/>').mirrorMaybe();
+      },
+      getFlotsam = function(){
+        var passengers = ['penguin', 'penguin', 'robot'],
+            passenger = passengers[Math.floor(Math.random() * passengers.length)];
+        return $('<div class="passenger ' + passenger + '"/>').mirrorMaybe();
+      };
 
   var getSpeedBoatClass = function(){
         var speeds = ['slow', 'medium', 'medium', 'fast'];
@@ -32,14 +37,16 @@
       top: top + '%',
       zIndex: top
     }).mirrorMaybe();
-    $party.append(getPassenger());
 
     if (onABoat) {
-      $party.append(getPassenger())
+      $party
+        .append(getPassenger())
+        .append(getPassenger())
         .append($('<div class="boat"/>'))
         .addClass(getSpeedBoatClass());
     } else {
       $party
+        .append(getFlotsam())
         .addClass(getFlotsamSpeedClass());
       }
 
