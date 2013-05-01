@@ -65,7 +65,20 @@
     setTimeout(makeBoat, Math.random() * 3000);
   };
 
+  var makeWave = function(){
+    var classes = ['ripples1', 'ripples2', 'ripples3', 'ripples4'],
+        className = classes[Math.floor(Math.random() * classes.length)];
+    $('<div class="' + className + '"/>').css({
+      top: Math.floor(Math.random() * 100) + '%',
+      left: Math.floor(Math.random() * 100) + '%'
+    }).appendTo($lake);
+  };
+
   var $lake = $('#lake');
+
+  for (var i = 0; i < 20; i++){
+    makeWave();
+  }
 
   makeBoat();
 
