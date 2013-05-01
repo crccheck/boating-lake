@@ -4,6 +4,12 @@
   var makeBoat = function(){
     var $boat = $('<div class="boat"/>');
 
+    var top = Math.floor(Math.random() * 99) + 1;
+    $boat.css({
+      top: top + '%',
+      zIndex: top
+    });
+
     if (Math.random() > 0.5){
       $boat.addClass('mirror');
     }
