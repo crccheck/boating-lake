@@ -1,6 +1,6 @@
 @import "compass/css3/transform"
 @import "compass/css3/transition"
-@import "compass/utilities/text/replacement"
+@import "compass/typography/text/replacement"
 
 $water: #C8E0F5
 $text: #004f6f
@@ -50,13 +50,25 @@ h1
 .veryslow
   +transition-duration(120s)
 
+%carrier
+  background-repeat: no-repeat
+  position: absolute
+
 .boat
-  background: url(images/boat.png) no-repeat
+  @extend %carrier
+  background-image: url(images/boat.png)
   bottom: 0
   height: 46px
   left: 0
-  position: absolute
   width: 87px
+
+.ripples
+  @extend %carrier
+  background: url(images/flotsam-ripples.png)
+  bottom: 21px
+  height: 14px
+  left: 4px
+  width: 28px
 
 .passenger
   background-repeat: no-repeat
@@ -112,7 +124,6 @@ h1
   height: 40px
   top: 25px
   width: 43px
-
 
 .debug .party
   outline: 2px dashed lime

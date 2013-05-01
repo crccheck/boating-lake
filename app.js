@@ -47,6 +47,7 @@
     } else {
       $party
         .append(getFlotsam())
+        .append($('<div class="ripples"/>'))
         .addClass(getFlotsamSpeedClass());
       }
 
