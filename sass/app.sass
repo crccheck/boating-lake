@@ -17,15 +17,12 @@ h1
 .mirror
   +scaleX(-1)
 
-.boat
+.party
   +transition-property(left)
   +transition-duration(10s)
   +transition-timing-function(linear)
-  background: url(images/boat.png) no-repeat
-  height: 46px
   left: -10%
   position: absolute
-  width: 87px
 
   &.launched
     left: 110%
@@ -35,9 +32,15 @@ h1
     &.launched
       left: -10%
 
+.boat
+  background: url(images/boat.png) no-repeat
+  height: 46px
+  width: 87px
+
 .passenger
   background-repeat: no-repeat
   position: absolute
+  z-index: -1
 
 .lovers
   background: url(images/lovers.png)
