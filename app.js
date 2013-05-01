@@ -91,4 +91,10 @@
 
   makeBoat();
 
+  // easter egg interactions
+  $lake
+    .on('click', '.boat', function(){
+      $(this).parent().toggleClass('mirror');
+    });
+
 })(window.jQuery);
