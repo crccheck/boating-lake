@@ -1,10 +1,17 @@
 (function($){
   "use strict";
 
+  $.fn.mirrorMaybe = function(){
+    if (Math.random() > 0.5){
+      this.addClass('mirror');
+    }
+    return this;
+  };
+
   var getPassenger = function(){
     var passengers = ['lovers', 'murderer', 'penguin', 'robot', 'voyeur'],
         passenger = passengers[Math.floor(Math.random() * passengers.length)];
-    return $('<div class="passenger ' + passenger + '"/>');
+    return $('<div class="passenger ' + passenger + '"/>').mirrorMaybe();
   };
 
   var makeBoat = function(){
@@ -14,11 +21,7 @@
     $boat.css({
       top: top + '%',
       zIndex: top
-    });
-
-    if (Math.random() > 0.5){
-      $boat.addClass('mirror');
-    }
+    }).mirrorMaybe();
 
     $boat.prepend(getPassenger());
 
