@@ -9,7 +9,7 @@
   };
 
   var getPassenger = function(){
-    var passengers = ['lovers', 'murderer', 'penguin', 'robot', 'voyeur'],
+    var passengers = ['', 'lovers', 'murderer', 'penguin', 'robot', 'voyeur'],
         passenger = passengers[Math.floor(Math.random() * passengers.length)];
     return $('<div class="passenger ' + passenger + '"/>').mirrorMaybe();
   };
