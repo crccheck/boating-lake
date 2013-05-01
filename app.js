@@ -14,13 +14,17 @@
     return $('<div class="passenger ' + passenger + '"/>').mirrorMaybe();
   };
 
-  var getSpeedClass = function(){
-    var speeds = ['slow', 'medium', 'medium', 'fast'];
-    return speeds[Math.floor(Math.random() * speeds.length)];
-  };
+  var getSpeedBoatClass = function(){
+        var speeds = ['slow', 'medium', 'medium', 'fast'];
+        return speeds[Math.floor(Math.random() * speeds.length)];
+      },
+      getFlotsamSpeedClass = function(){
+        var speeds = ['veryslow', 'slow', 'slow', 'medium'];
+        return speeds[Math.floor(Math.random() * speeds.length)];
+      };
 
   var makeBoat = function(){
-    var $party = $('<div class="party ' + getSpeedClass() + '"/>'),
+    var $party = $('<div class="party"/>'),
         onABoat = Math.random() > 0.10;
 
     var top = Math.floor(Math.random() * 99) + 1;
@@ -31,9 +35,13 @@
     $party.append(getPassenger());
 
     if (onABoat) {
-      $party.append(getPassenger());
-      $party.append($('<div class="boat"/>'));
-    }
+      $party.append(getPassenger())
+        .append($('<div class="boat"/>'))
+        .addClass(getSpeedBoatClass());
+    } else {
+      $party
+        .addClass(getFlotsamSpeedClass());
+      }
 
     $party.appendTo($lake);
 
@@ -43,7 +51,7 @@
 
     setTimeout(function(){
       $party.remove();
-    }, 60 * 1000);
+    }, 120 * 1000);
 
     // make next boat
     setTimeout(makeBoat, Math.random() * 3000);
