@@ -1,7 +1,11 @@
 @import "compass/css3/transform"
+@import "compass/css3/transition"
 
 $water: #c6e5f7
 $text: #004f6f
+
+body, html
+  overflow: hidden
 
 body
   background: $water
@@ -9,9 +13,22 @@ body
 
 
 .boat
-  height: 46px
-  width: 87px
+  +transition-property(left)
+  +transition-duration(10s)
+  +transition-timing-function(linear)
   background: url(images/boat.png) no-repeat
+  height: 46px
+  left: -10%
+  position: absolute
+  width: 87px
+
+  &.launched
+    left: 110%
+
+  &.mirror
+    left: 110%
+    &.launched
+      left: -10%
 
 
 .mirror

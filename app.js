@@ -9,12 +9,18 @@
     }
 
     $boat.appendTo($lake);
+
+    setTimeout(function(){
+      $boat.addClass('launched');
+    }, 50);
+
+    setTimeout(function(){
+      $boat.remove();
+    }, 10 * 1000);
   };
 
   var $lake = $('#lake');
-  makeBoat();
-  makeBoat();
-  makeBoat();
-  makeBoat();
+
+  setInterval(makeBoat, 2 * 1000);
 
 })(window.jQuery);
