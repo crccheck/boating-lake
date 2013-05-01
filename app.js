@@ -49,7 +49,9 @@
         .append(getFlotsam())
         .append($('<div class="ripples"/>'))
         .addClass(getFlotsamSpeedClass());
-      }
+      // mutate a ripple too
+      mutateWave();
+    }
 
     $party.appendTo($lake);
 
@@ -66,13 +68,20 @@
   };
 
   var makeWave = function(){
-    var classes = ['ripples1', 'ripples2', 'ripples3', 'ripples4'],
-        className = classes[Math.floor(Math.random() * classes.length)];
-    $('<div class="' + className + '"/>').css({
-      top: Math.floor(Math.random() * 100) + '%',
-      left: Math.floor(Math.random() * 100) + '%'
-    }).appendTo($lake);
-  };
+        var classes = ['ripples1', 'ripples2', 'ripples3', 'ripples4'],
+            className = classes[Math.floor(Math.random() * classes.length)];
+        return $('<div class="ripple ' + className + '"/>').css({
+          top: Math.floor(Math.random() * 100) + '%',
+          left: Math.floor(Math.random() * 100) + '%'
+        }).appendTo($lake);
+      },
+      mutateWave = function(){
+        var $ripple = $lake.find('.ripple:first');
+        $ripple.fadeOut(10000, function(){
+          $ripple.remove();
+        });
+        makeWave().hide().fadeIn(10000);
+      };
 
   var $lake = $('#lake');
 
