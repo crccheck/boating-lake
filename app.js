@@ -40,11 +40,13 @@
     setTimeout(function(){
       $boat.remove();
     }, 30 * 1000);
+
+    // make next boat
+    setTimeout(makeBoat, Math.random() * 3000);
   };
 
   var $lake = $('#lake');
 
-  setInterval(makeBoat, 2 * 1000);
   makeBoat();
 
 })(window.jQuery);
