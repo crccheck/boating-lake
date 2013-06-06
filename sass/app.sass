@@ -29,14 +29,16 @@ img
   +scaleX(-1)
 
 %left
-  left: -10%
+  left: 0
+  +translateX(-87px - 10px)
 
 %right
-  left: 110%
+  left: 100%
+  +translateX(10px)
 
 .party
   @extend %left
-  +transition-property(left)
+  +transition-property(left, transform)
   +transition-timing-function(linear)
   position: absolute
   height: 100px
