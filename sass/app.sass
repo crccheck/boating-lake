@@ -28,21 +28,27 @@ img
 .mirror
   +scaleX(-1)
 
+%left
+  left: -10%
+
+%right
+  left: 110%
+
 .party
+  @extend %left
   +transition-property(left)
   +transition-timing-function(linear)
-  left: -10%
   position: absolute
   height: 100px
   width: 77px
 
   &.launched
-    left: 110%
+    @extend %right
 
   &.mirror
-    left: 110%
+    @extend %right
     &.launched
-      left: -10%
+      @extend %left
 
 .fast
   +transition-duration(30s)
